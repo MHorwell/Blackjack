@@ -20,6 +20,14 @@ class DeckTest(unittest.TestCase):
         deck = Deck()
         mock_shuffle.assert_called_once_with(deck)
 
+    @patch("Deck.Hand")
+    def test_create_hand(self, mock_hand):
+        test_deck = Deck()
+        first_two_cards = test_deck[:2]
+        test_deck.create_hand()
+        mock_hand.assert_called_once_with(first_two_cards)
+        self.assertEqual(len(test_deck), 50)
+
 
 if __name__ == '__main__':
     unittest.main()
