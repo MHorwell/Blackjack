@@ -17,8 +17,8 @@ class DeckTest(unittest.TestCase):
 
     @patch("Deck.shuffle")
     def test_deck_shuffled_on_init(self, mock_shuffle):
-        deck = Deck()
-        mock_shuffle.assert_called_once_with(deck)
+        test_deck = Deck()
+        mock_shuffle.assert_called_once_with(test_deck)
 
     @patch("Deck.Hand")
     def test_create_hand(self, mock_hand):
